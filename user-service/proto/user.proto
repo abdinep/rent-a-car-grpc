@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/abdin/rent-a-car/user";
+
+service UserService {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc Getcars (CarRequest) returns (CarResponse);
+}
+
+message RegisterRequest {
+    string username = 1;
+    string password = 2;
+    string email = 3;
+}
+
+message RegisterResponse {
+    string message = 1;
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string token = 1;
+}
+
+message CarRequest {
+    
+}
+message Car{
+    string id = 1;
+    string model = 2;
+    string make = 3;
+    int32  year = 4;
+}
+message CarResponse {
+    repeated Car cars = 1;
+}

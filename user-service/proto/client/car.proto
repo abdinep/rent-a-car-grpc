@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package car;
+option go_package = "github.com/abdin/rent-a-car/cars";
+
+service CarService {
+    rpc AddCar (AddCarRequest) returns (AddCarResponse);
+    rpc ListCars (ListCarsRequest) returns (ListCarsResponse);
+}
+
+message AddCarRequest {
+    string model = 1;
+    string make = 2;
+    int32 year = 3;
+}
+
+message AddCarResponse {
+    string id = 1;
+}
+
+message ListCarsRequest {}
+
+message Car {
+    string id = 1;
+    string model = 2;
+    string make = 3;
+    int32 year = 4;
+}
+
+message ListCarsResponse {
+    repeated Car cars = 1;
+}

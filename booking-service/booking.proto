@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package booking;
+
+service BookingService {
+    rpc BookCar (BookCarRequest) returns (BookCarResponse);
+}
+
+message BookCarRequest {
+    string user_id = 1;
+    string car_id = 2;
+    string date = 3;
+}
+
+message BookCarResponse {
+    string booking_id = 1;
+}
