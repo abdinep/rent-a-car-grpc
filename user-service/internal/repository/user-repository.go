@@ -10,7 +10,6 @@ import (
 type UserRepository interface {
 	CreateUser(username, password, email string) error
 	FindUserByUsername(username string) (*service.User, error)
-	// FindUserByID(userID string) (*service.User, error)
 }
 
 type userRepository struct {

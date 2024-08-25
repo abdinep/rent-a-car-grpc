@@ -18,7 +18,6 @@ type User struct {
 type UserRepository interface {
 	CreateUser(username, password, email string) error
 	FindUserByUsername(username string) (*User, error)
-	// FindUserByID(userID string) (*User, error)
 }
 
 type UserService interface {
